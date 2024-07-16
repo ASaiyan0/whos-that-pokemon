@@ -7,4 +7,4 @@
 3. Under "Build and Deployment", for "Source", choose "Deploy from a branch".
 4. Select "/ (root)" as the folder and click "Save".
 
-The site should now be online at https://<username>.github.io/<repo-name>
+The site should now be online at https://\<username\>.github.io/\<repo-name\>
