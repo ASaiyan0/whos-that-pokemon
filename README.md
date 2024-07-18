@@ -8,3 +8,7 @@
 4. Select "master" as the branch, "/ (root)" as the folder, and click "Save".
 
 Within a few minutes, the site should come online at https://\<username\>.github.io/\<repo-name\>/
+
+## Serving Locally
+
+After cloning this repo, run `npm install`. Then run `npm start` to start the server.
