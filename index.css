@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Digital 7";
-  src: url ("Digital7.ttf") format("truetype");
+  src: url("Digital7.ttf") format("truetype");
 }
 
 body {
@@ -24,6 +24,7 @@ body {
   top: 35px;
   margin: 0 auto;
   border-radius: 15px;
+  padding-right: 20px;
 }
 
 .numDisplay {
@@ -35,7 +36,7 @@ body {
   position: relative;
   font-size: 100px;
   text-align: right;
-  padding-right: 20px;
+  overflow: hidden;
 }
 
 .logoType {
@@ -89,7 +90,7 @@ body {
   border-radius: 15px;
 }
 
-.lButton {
+.eButton {
   background-color: #ed302e;
   color: #ffffff;
   font-family: "Verdana", "Arial", sans-serif;
