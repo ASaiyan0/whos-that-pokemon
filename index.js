@@ -5,18 +5,22 @@ window.addEventListener("load", () => {
   const numDisplay = document.querySelector(".numDisplay");
   const opArray = ["add", "subtract", "multiply", "divide"];
   let currentString = numDisplay.textContent;
-
-  let currentNum = Number(currentString);
   let firstNum = "";
   let currentOp = "";
-  let memNum = "";
+  let errLock = false;
 
   for (let n = 0; n <= 9; n++) {
     numButtons[n].addEventListener("click", () => {
       if (currentString.length <= 10) {
-        numDisplay.textContent = currentString + numButtons[n].textContent;
-        currentString = numDisplay.textContent;
-        currentNum = Number(currentString);
+        if (errLock == true) {
+          currentString = "";
+          errLock = false;
+          currentString = currentString + numButtons[n].textContent;
+          numDisplay.textContent = currentString;
+        } else {
+          currentString = currentString + numButtons[n].textContent;
+          numDisplay.textContent = currentString;
+        }
       } else {
         return;
       }
@@ -24,42 +28,63 @@ window.addEventListener("load", () => {
   }
 
   numButtons[10].addEventListener("click", () => {
-    if (currentString.includes(".")) {
+    if (errLock == true) {
+      return;
+    } else if (currentString.includes(".")) {
       return;
     } else {
-      numDisplay.textContent = currentString + numButtons[10].textContent;
-      currentString = numDisplay.textContent;
-      currentNum = Number(currentString);
+      currentString = currentString + numButtons[10].textContent;
+      numDisplay.textContent = currentString;
     }
   });
 
   numButtons[11].addEventListener("click", () => {
-    if (currentString.includes("-")) {
-      currentNum = Number(currentString) * -1;
-      numDisplay.textContent = currentNum.toString();
-      currentString = numDisplay.textContent;
+    if (errLock == true || currentString == "" || currentString == ".") {
+      return;
+    } else if (currentString.length > 10) {
+      currentString = (Number(currentString) * -1).toExponential(5);
+      numDisplay.textContent = currentString;
     } else {
-      numDisplay.textContent = "-" + currentString;
-      currentString = numDisplay.textContent;
-      currentNum = Number(currentString);
+      currentString = (Number(currentString) * -1).toString();
+      numDisplay.textContent = currentString;
     }
   });
 
   for (let n = 0; n <= 3; n++) {
     opButtons[n].addEventListener("click", () => {
-      firstNum = Number(numDisplay.textContent);
-      currentOp = opArray[n];
-      numDisplay.textContent = "";
-      currentString = numDisplay.textContent;
-      currentNum = Number(currentString);
+      if (errLock == true) {
+        return;
+      } else {
+        firstNum = Number(currentString);
+        currentOp = opArray[n];
+        currentString = "";
+        numDisplay.textContent = currentString;
+      }
     });
   }
+  opButtons[4].addEventListener("click", () => {
+    if (errLock == true) {
+      return;
+    } else if (currentString.includes("-")) {
+      currentString = "Error";
+      numDisplay.textContent = currentString;
+      firstNum = "";
+      currentOp = "";
+      errLock = true;
+    } else {
+      currentString = Math.sqrt(Number(currentString))
+        .toString()
+        .substring(0, 10);
+      numDisplay.textContent = currentString;
+    }
+  });
+
   opButtons[5].addEventListener("click", () => {
-    numDisplay.textContent = "";
-    currentString = numDisplay.textContent;
-    currentNum = Number(currentString);
+    currentString = "";
+    numDisplay.textContent = currentString;
     firstNum = "";
     currentOp = "";
+    errLock = false;
   });
 
   eqButton.addEventListener("click", () => {
@@ -69,39 +94,49 @@ window.addEventListener("load", () => {
       numDisplay.textContent = currentString;
     } else if (firstNum != "" && currentString != "") {
       if (currentOp == "add") {
-        numDisplay.textContent = (firstNum + currentNum)
+        currentString = (firstNum + Number(currentString))
           .toString()
           .substring(0, 10);
-        currentString = numDisplay.textContent;
-        currentNum = Number(currentString);
+        numDisplay.textContent = currentString;
         firstNum = "";
         currentOp = "";
       } else if (currentOp == "subtract") {
-        numDisplay.textContent = (firstNum - currentNum)
+        currentString = (firstNum - Number(currentString))
           .toString()
           .substring(0, 10);
-        currentString = numDisplay.textContent;
-        currentNum = Number(currentString);
+        numDisplay.textContent = currentString;
         firstNum = "";
         currentOp = "";
       } else if (currentOp == "multiply") {
-        numDisplay.textContent = (firstNum * currentNum)
-          .toString()
-          .substring(0, 10);
-        currentString = numDisplay.textContent;
-        currentNum = Number(currentString);
+        if ((firstNum * Number(currentString)).toString().length > 10) {
+          currentString = (firstNum * Number(currentString)).toExponential(5);
+        } else {
+          currentString = (firstNum * Number(currentString)).toString();
+        }
+        numDisplay.textContent = currentString;
         firstNum = "";
         currentOp = "";
       } else if (currentOp == "divide") {
-        numDisplay.textContent = (firstNum / currentNum)
-          .toString()
-          .substring(0, 10);
-        currentString = numDisplay.textContent;
-        currentNum = Number(currentString);
+        if (Number(currentString) == 0) {
+          currentString = "Error";
+          numDisplay.textContent = currentString;
+          firstNum = "";
+          currentOp = "";
+          errLock = true;
+        } else {
+          currentString = (firstNum / Number(currentString))
+            .toString()
+            .substring(0, 10);
+          numDisplay.textContent = currentString;
+          firstNum = "";
+          currentOp = "";
+        }
+      } else {
+        currentString = "Error";
+        numDisplay.textContent = currentString;
         firstNum = "";
         currentOp = "";
-      } else {
-        numDisplay.textContent = "32202!";
+        errLock = true;
       }
     }
   });
