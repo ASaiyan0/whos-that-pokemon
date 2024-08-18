@@ -1,0 +1,175 @@
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto", Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(#d7f89f, #96e6cb);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 2em;
+  width: 50%;
+  min-width: fit-content;
+  text-align: center;
+  border-radius: 15px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+}
+
+.buttoncols {
+  flex-basis: 25%;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  min-height: fit-content;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em;
+  font-style: italic;
+  font-size: 0.6em;
+  text-align: center;
+  color: #000;
+  background-color: #50ce9f;
+}
+
+#guess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 2em;
+  width: 50%;
+  min-width: fit-content;
+  text-align: center;
+  border-radius: 15px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+}
+
+.guessbox {
+  flex-basis: 50%;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+}
+
+.guessstats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 2em;
+  width: 50%;
+  min-width: fit-content;
+  text-align: center;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #50ce9f;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.header img {
+  width: 100%;
+  max-width: 695px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.name {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 3em;
+  color: #000;
+}
+
+.pokemon {
+  display: flex;
+  flex-basis: 50%;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("pokeball.png");
+}
+
+.pokemon img {
+  filter: brightness(0%);
+  width: 100%;
+  max-width: 512px;
+}
+
+.stats {
+  flex-basis: 25%;
+  flex-grow: 1;
+  height: 100%;
+  font-weight: bold;
+  font-size: 1em;
+  color: #fff;
+}
+
+.stbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 5em;
+  width: 75%;
+  min-width: fit-content;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #50ce9f;
+}
+
+.ui {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.uibox {
+  flex-basis: 25%;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+}
