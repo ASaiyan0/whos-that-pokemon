@@ -29,6 +29,7 @@ body {
 .buttoncols {
   flex-basis: 25%;
   flex-grow: 1;
+  height: 100%;
   justify-content: center;
   align-items: center;
   font-size: 1em;
@@ -69,6 +70,7 @@ body {
 .guessbox {
   flex-basis: 50%;
   flex-grow: 1;
+  height: 100%;
   justify-content: center;
   align-items: center;
   font-size: 1em;
