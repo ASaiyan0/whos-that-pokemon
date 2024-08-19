@@ -100,10 +100,12 @@ window.addEventListener("load", () => {
         (networkError) => console.log(networkError.message)
       )
       .then((jsonResponse) => {
-        if (num <= 898) {
+            if (num <= 898) {
           hintBox[5].textContent = jsonResponse.genera[7].genus;
-        } else {
+        } else if (num <= 1010) {
           hintBox[5].textContent = jsonResponse.genera[3].genus;
+        } else {
+          hintBox[5].textContent = jsonResponse.genera[0].genus;
         }
       });
   }
