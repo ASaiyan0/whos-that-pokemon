@@ -4,13 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <title>Who's that Pokémon?</title>
+    <title>Who's That Pokémon?</title>
 
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="favicon.png" />
 
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
+    <script src="index.js" type="module" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,36 +22,39 @@
     <div class="header"><img src="headerlogo.png"/></div>
     <div class="main">
       <div class="stats">
-        <div class="stbox" id="st1">Type: Poison/Ghost</div>
+        <div class="stbox" id="st0"> </div>
         <br />
-        <div class="stbox" id="st3">Height: 0.3m</div>
+        <div class="stbox" id="st1"> </div>
         <br />
-        <div class="stbox" id="st5">Subjugation Pokémon</div>
+        <div class="stbox" id="st2"> </div>
       </div>
       <div class="pokemon">
-        <img src="https://archives.bulbagarden.net/media/upload/e/e1/HOME1025.png" draggable="false"/>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1025.png" draggable="false"/>
       </div>
       <div class="stats">
-      <div class="stbox" id="st2">Region: Kitakami</div>
+      <div class="stbox" id="st3"> </div>
       <br />
-      <div class="stbox" id="st4">Weight: 0.3kg</div>
+      <div class="stbox" id="st4"> </div>
       <br />
-      <div class="stbox" id="st6">#1025</div>
+      <div class="stbox" id="st5"> </div>
     </div>
   </br>
 </br>
     <div class="ui">
-      <div class ="name">???</div>
+      <div class ="name" id="name">???</div>
       <div class ="buttoncols">
       <div class="guessstats" id="right">Right Guesses: 0</div>
       <br />
       <div class="guessstats" id="wrong">Wrong Guesses: 0</div>
       </div>
-      <div class="guessbox"><form>
-        <input type="text" list = "pokemon" id ="guess" name ="guess">
-        <datalist id ="pokemon">
+      <div class="guessbox" id="guessbox">
+      <form>
+        <input type="text" list ="pokeList" id ="guess" name ="guess">
+        <datalist id ="pokeList">
         </datalist>
-      </form></div>
+      </form>
+      <br />
+      <button class="button" id="hint">Submit</button></div>
       <div class ="buttoncols">
       <div class="uibuttons">
         <button class="button" id="hint">Hint</button>
@@ -65,8 +68,7 @@
       The Pokémon logo and all related names and characters are TM and copyright
       The Pokémon Company and its respective owners (Nintendo, Game Freak,
       CREATURES Inc.) © 1996-2024. All rights reserved. Poké Ball silhouette
-      created by Iconic of The Noun Project (CC-BY-3.0). Images sourced from
-      Bulbagarden Archives. Additional data sourced from PokéAPI.
+      created by Iconic of The Noun Project (CC-BY-3.0). Pokémon images and additional data queried from PokéAPI.
     </div>
   </body>
 </html>
