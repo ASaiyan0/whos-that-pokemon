@@ -109,9 +109,9 @@ window.addEventListener("load", () => {
         }  else if (num <= 1010) {
           hintBox[5].textContent = jsonResponse.genera[3].genus;
         } else if (num <= 1020) {
-          hintBox[5].textContent = jsonResponse.genera[1].genus;
-        } else {
           hintBox[5].textContent = jsonResponse.genera[0].genus;
+        } else {
+          hintBox[5].textContent = jsonResponse.genera[1].genus;
         }
       });
   }
