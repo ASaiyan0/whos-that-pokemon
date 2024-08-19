@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
           hintBox[5].textContent = jsonResponse.genera[2].genus;
         }  else if (num <= 1010) {
           hintBox[5].textContent = jsonResponse.genera[3].genus;
-        } else if (num <= 1020) {
+        } else if (num <= 1017) {
           hintBox[5].textContent = jsonResponse.genera[0].genus;
         } else {
           hintBox[5].textContent = jsonResponse.genera[1].genus;
