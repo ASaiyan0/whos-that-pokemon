@@ -186,7 +186,13 @@ body {
   font-size: 1rem;
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 700px) {
+  .footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 150px) {
   .footer {
     display: none;
   }
