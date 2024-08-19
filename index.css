@@ -1,3 +1,11 @@
+a {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #000;
+  text-decoration: none;
+}
+
 body {
   box-sizing: border-box;
   height: 100%;
@@ -14,13 +22,13 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 2em;
+  height: 2rem;
   width: 50%;
   min-width: fit-content;
   text-align: center;
   border-radius: 15px;
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
   color: #000;
   background-color: #fff;
@@ -29,9 +37,10 @@ body {
 .buttoncols {
   flex-basis: 25%;
   flex-grow: 1;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .footer {
@@ -41,9 +50,9 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.5em;
+  padding: 0.5rem;
   font-style: italic;
-  font-size: 0.6em;
+  font-size: 0.6rem;
   text-align: center;
   color: #000;
   background-color: #50ce9f;
@@ -54,13 +63,13 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 2em;
+  height: 2rem;
   width: 50%;
   min-width: fit-content;
   text-align: center;
   border-radius: 15px;
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
   color: #000;
   background-color: #fff;
@@ -69,9 +78,11 @@ body {
 .guessbox {
   flex-basis: 50%;
   flex-grow: 1;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .guessstats {
@@ -79,7 +90,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 2em;
+  height: 2rem;
   width: 50%;
   min-width: fit-content;
   text-align: center;
@@ -113,7 +124,7 @@ body {
 .name {
   flex-basis: 100%;
   text-align: center;
-  font-size: 3em;
+  font-size: 3rem;
   color: #000;
 }
 
@@ -140,7 +151,7 @@ body {
   flex-grow: 1;
   height: 100%;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1rem;
   color: #fff;
 }
 
@@ -149,7 +160,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 5em;
+  height: 5rem;
   width: 75%;
   min-width: fit-content;
   text-align: center;
@@ -166,10 +177,11 @@ body {
   font-weight: bold;
 }
 
-.uibox {
+.uibuttons {
   flex-basis: 25%;
   flex-grow: 1;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
+  font-size: 1rem;
 }
