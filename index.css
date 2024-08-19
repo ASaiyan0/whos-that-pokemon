@@ -191,9 +191,3 @@ body {
     display: none;
   }
 }
-
-@media screen and (max-width: 150px) {
-  .footer {
-    display: none;
-  }
-}
