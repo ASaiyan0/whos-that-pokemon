@@ -1,7 +1,7 @@
 export { pokeName, getGen };
 
 const pokeName = [
-  "MissingNo",
+  "MissingNo.",
   "Bulbasaur",
   "Ivysaur",
   "Venusaur",

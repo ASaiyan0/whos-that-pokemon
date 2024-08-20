@@ -43,8 +43,8 @@ window.addEventListener("load", () => {
     }
   }
 
-  function getHint() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${num}/`)
+  async function getHint() {
+    await fetch(`https://pokeapi.co/api/v2/pokemon/${num}/`)
       .then(
         (response) => {
           if (response.ok) {
@@ -54,7 +54,7 @@ window.addEventListener("load", () => {
         },
         (networkError) => console.log(networkError.message)
       )
-      .then((jsonResponse) => {
+      .then(async (jsonResponse) => {
         if (hintCount == 0) {
           let type1 = titleCase(jsonResponse.types[0].type.name);
           hintBox[0].textContent = `Type 1: ${type1}`;
@@ -80,7 +80,7 @@ window.addEventListener("load", () => {
           hintBox[2].textContent = getGen(num);
           hintCount++;
         } else if (hintCount == 5) {
-          getSpecies();
+          hintBox[5].textContent = await getSpecies();
           hintCount++;
         } else {
           return;
@@ -88,8 +88,8 @@ window.addEventListener("load", () => {
       });
   }
 
-  function getSpecies() {
-    fetch(`https://pokeapi.co/api/v2/pokemon-species/${num}/`)
+  async function getSpecies() {
+    return await fetch(`https://pokeapi.co/api/v2/pokemon-species/${num}/`)
       .then(
         (response) => {
           if (response.ok) {
@@ -100,24 +100,15 @@ window.addEventListener("load", () => {
         (networkError) => console.log(networkError.message)
       )
       .then((jsonResponse) => {
-          if (num <= 898) {
-          hintBox[5].textContent = jsonResponse.genera[7].genus;
-        } else if (num <= 905) {
-          hintBox[5].textContent = jsonResponse.genera[5].genus;
-        } else if (num <= 908) {
-          hintBox[5].textContent = jsonResponse.genera[2].genus;
-        }  else if (num <= 1010) {
-          hintBox[5].textContent = jsonResponse.genera[3].genus;
-        } else if (num <= 1017) {
-          hintBox[5].textContent = jsonResponse.genera[0].genus;
-        } else if (num <= 1025) {
-          hintBox[5].textContent = jsonResponse.genera[1].genus;
-        }
+        let species = jsonResponse.genera.find(
+          (species) => species.language.name == "en"
+        );
+        return species.genus;
       });
   }
 
   function randomPoke() {
-    num = Math.floor(Math.random() * 1025);
+    num = Math.floor(Math.random() * 1025) + 1;
     pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${num}.png`;
     pokeImg.style.filter = "brightness(0%)";
   }
@@ -143,10 +134,10 @@ window.addEventListener("load", () => {
     name.appendChild(link);
   }
 
-  function revealAllHints() {
+  async function revealAllHints() {
     for (let n = 0; n <= 5; n++) {
       hintCount = n;
-      getHint();
+      await getHint();
     }
     hintCount = 0;
   }
@@ -169,8 +160,8 @@ window.addEventListener("load", () => {
     checkAnswer();
   });
 
-  button[1].addEventListener("click", () => {
-    getHint();
+  button[1].addEventListener("click", async () => {
+    await getHint();
   });
 
   button[2].addEventListener("click", () => {
