@@ -189,9 +189,3 @@ html {
   align-items: center;
   font-size: 1rem;
 }
-
-@media screen and (max-height: 700px) {
-  .footer {
-    display: none;
-  }
-}
