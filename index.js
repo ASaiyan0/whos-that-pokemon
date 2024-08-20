@@ -155,9 +155,13 @@ window.addEventListener("load", () => {
   }
 
   button[0].addEventListener("click", () => {
-    userGuess = guessBox.value;
-    guessBox.value = "";
-    checkAnswer();
+    if (name.textContent == "???" || name.textContent == "Try again.") {
+      userGuess = guessBox.value;
+      guessBox.value = "";
+      checkAnswer();
+    } else {
+      return;
+    }
   });
 
   button[1].addEventListener("click", async () => {
