@@ -75,7 +75,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url("/pokeball.png");
+  background-image: url("./pokeball.png");
 }
 
 .Main-image {
