@@ -18,7 +18,7 @@ export class Pokemon {
       )
       .then(async (jsonResponse) => {
         let height = jsonResponse.height / 10;
-        return `Height: ${height} m`;
+        return `Height: ${height}m`;
       });
   }
 
@@ -96,7 +96,7 @@ export class Pokemon {
       )
       .then(async (jsonResponse) => {
         let height = jsonResponse.weight / 10;
-        return `Height: ${height} kg`;
+        return `Height: ${height}kg`;
       });
   }
 
