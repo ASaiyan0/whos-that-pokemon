@@ -1,179 +1,220 @@
-a {
-  font-weight: bold;
-  font-size: 3rem;
-  color: #000;
-  text-decoration: none;
+/* Default browser style resets */
+
+* {
+  box-sizing: border-box;
 }
 
+html,
 body {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Site styles */
+
+html,
+body {
   height: 100%;
-  width: 100%;
-  margin: 0 auto;
+}
+
+html {
   font-family: "Roboto", Arial, sans-serif;
-  text-align: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: linear-gradient(#d7f89f, #96e6cb);
 }
 
-button {
+body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  height: 2rem;
-  width: 50%;
-  min-width: fit-content;
-  border-radius: 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #000;
-  background-color: #fff;
+  flex-direction: column;
 }
 
-figure {
+.Header {
+  padding: 16px;
+}
+
+.Header-image {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 695px;
+}
+
+.Main {
+  display: grid;
+  margin: 0 auto;
+  max-width: 1112px;
+  padding: 0 32px;
+  grid-template-areas:
+    "hint1 image hint4"
+    "hint2 image hint5"
+    "hint3 image hint6";
+  grid-template-columns: 268px auto 268px;
+  gap: 16px;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.Main-imageWrapper {
   display: flex;
-  flex-basis: 50%;
-  flex-grow: 1;
+  grid-area: image;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url("pokeball.png");
+  background-image: url("/pokeball.png");
 }
 
-figure img {
+.Main-image {
   filter: brightness(0%);
   width: 100%;
-  max-width: 512px;
 }
 
-footer {
-  min-height: fit-content;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  padding: 0.5rem;
-  font-style: italic;
-  font-size: 0.6rem;
-  color: #000;
-  background-color: #50ce9f;
-}
-
-header {
+.Main-hintBox {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
-header img {
-  width: 100%;
-  max-width: 695px;
-}
-
-html {
-  height: 100%;
-}
-
-main {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.buttonCols {
-  flex-basis: 25%;
-  flex-grow: 1;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.guessBox {
-  flex-basis: 50%;
-  flex-grow: 1;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.guessStats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  height: 2rem;
-  width: 50%;
-  min-width: fit-content;
+  margin-left: 25%;
+  height: 64px;
   border-radius: 15px;
-  color: #fff;
+  padding: 0 16px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   background-color: #50ce9f;
-}
-
-.hints {
-  flex-basis: 25%;
-  flex-grow: 1;
-  font-weight: bold;
-  font-size: 1rem;
   color: #fff;
 }
 
-.hintBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  height: 5rem;
-  width: 75%;
-  min-width: fit-content;
-  border-radius: 15px;
-  background-color: #50ce9f;
+.Main-hintBox:nth-child(odd) {
+  margin-left: 0;
+  margin-right: 25%;
 }
 
-.name {
-  flex-basis: 100%;
-  font-size: 3rem;
-  color: #000;
+.UI {
+  margin: 16px;
 }
 
-.ui {
+.UI-name {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 48px;
+}
+
+.UI-inputs {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  width: 100%;
+  gap: 32px;
+}
+
+.UI-sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.UI-stat,
+.UI-button {
+  width: 160px;
+  border-radius: 15px;
+  padding: 8px;
+  text-align: center;
   font-weight: bold;
 }
 
-.uiButtons {
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
+.UI-stat {
+  border-radius: 15px;
+  padding: 8px;
+  background-color: #50ce9f;
+  color: #fff;
 }
 
-#inputBox {
-  justify-content: center;
+.UI-guessBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   align-items: center;
-  text-align: center;
-  margin: 0 auto;
+}
+
+.UI-inputBox {
   height: 2rem;
-  width: 50%;
-  min-width: fit-content;
+  width: 100%;
+  max-width: 250px;
   border-radius: 15px;
+  text-align: center;
   font-size: 1rem;
   font-weight: bold;
   color: #000;
   background-color: #fff;
+}
+
+.UI-submit {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.UI-button {
+  background-color: #fff;
+}
+
+.Footer {
+  margin-top: auto;
+  background-color: #50ce9f;
+  padding: 8px;
+  text-align: center;
+  color: #000;
+  font-style: italic;
+  font-size: 12px;
+}
+
+/* Mobile styles */
+
+@media (max-width: 991px) {
+  .Main {
+    width: 100%;
+    grid-template-areas:
+      "image image"
+      "hint1 hint2"
+      "hint3 hint4"
+      "hint5 hint6";
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .Main-image {
+    max-width: 256px;
+  }
+
+  .Main-hintBox,
+  .Main-hintBox:nth-child(odd) {
+    margin: 0;
+    height: 48px;
+    width: 100%;
+    max-width: 268px;
+  }
+
+  .UI-name {
+    font-size: 32px;
+  }
+
+  .UI-guessBox {
+    order: -1;
+    width: 100%;
+  }
 }
