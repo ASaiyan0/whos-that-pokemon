@@ -1,4 +1,5 @@
 a {
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: bold;
   font-size: 3rem;
   color: #000;
@@ -13,13 +14,16 @@ body {
   width: 100%;
   margin: 0 auto;
   font-family: "Roboto", Arial, sans-serif;
-  text-align: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: linear-gradient(#d7f89f, #96e6cb);
 }
 
-button {
+html {
+  height: 100%;
+}
+
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,14 +31,109 @@ button {
   height: 2rem;
   width: 50%;
   min-width: fit-content;
+  text-align: center;
   border-radius: 15px;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 1rem;
   font-weight: bold;
   color: #000;
   background-color: #fff;
 }
 
-figure {
+.buttoncols {
+  flex-basis: 25%;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.footer {
+  min-height: fit-content;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding: 0.5rem;
+  font-style: italic;
+  font-size: 0.6rem;
+  text-align: center;
+  color: #000;
+  background-color: #50ce9f;
+}
+
+#guess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 2rem;
+  width: 50%;
+  min-width: fit-content;
+  text-align: center;
+  border-radius: 15px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+}
+
+.guessbox {
+  flex-basis: 50%;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.guessstats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 2rem;
+  width: 50%;
+  min-width: fit-content;
+  text-align: center;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #50ce9f;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.header img {
+  width: 100%;
+  max-width: 695px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.name {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #000;
+}
+
+.pokemon {
   display: flex;
   flex-basis: 50%;
   flex-grow: 1;
@@ -46,82 +145,13 @@ figure {
   background-image: url("pokeball.png");
 }
 
-figure img {
+.pokemon img {
   filter: brightness(0%);
   width: 100%;
   max-width: 512px;
 }
 
-footer {
-  min-height: fit-content;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  padding: 0.5rem;
-  font-style: italic;
-  font-size: 0.6rem;
-  color: #000;
-  background-color: #50ce9f;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
-header img {
-  width: 100%;
-  max-width: 695px;
-}
-
-html {
-  height: 100%;
-}
-
-main {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.buttonCols {
-  flex-basis: 25%;
-  flex-grow: 1;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.guessBox {
-  flex-basis: 50%;
-  flex-grow: 1;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.guessStats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  height: 2rem;
-  width: 50%;
-  min-width: fit-content;
-  border-radius: 15px;
-  color: #fff;
-  background-color: #50ce9f;
-}
-
-.hints {
+.stats {
   flex-basis: 25%;
   flex-grow: 1;
   font-weight: bold;
@@ -129,7 +159,7 @@ main {
   color: #fff;
 }
 
-.hintBox {
+.stbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,14 +167,9 @@ main {
   height: 5rem;
   width: 75%;
   min-width: fit-content;
+  text-align: center;
   border-radius: 15px;
   background-color: #50ce9f;
-}
-
-.name {
-  flex-basis: 100%;
-  font-size: 3rem;
-  color: #000;
 }
 
 .ui {
@@ -156,24 +181,11 @@ main {
   font-weight: bold;
 }
 
-.uiButtons {
+.uibuttons {
+  flex-basis: 25%;
+  flex-grow: 1;
   height: 100%;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-}
-
-#inputBox {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  height: 2rem;
-  width: 50%;
-  min-width: fit-content;
-  border-radius: 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #000;
-  background-color: #fff;
 }

@@ -19,57 +19,62 @@
     />
   </head>
   <body oncontextmenu="return false">
-    <div class="header"><img src="headerlogo.png"/></div>
-    <div class="main">
-      <div class="stats">
-        <div class="stbox" id="st0"> </div>
+    <header><img src="headerlogo.png" /></header>
+    <main>
+      <section class="hints">
+        <div class="hintBox" id="hint1"></div>
         <br />
-        <div class="stbox" id="st1"> </div>
+        <div class="hintBox" id="hint2"></div>
         <br />
-        <div class="stbox" id="st2"> </div>
-      </div>
-      <div class="pokemon">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1025.png" draggable="false"/>
-      </div>
-      <div class="stats">
-      <div class="stbox" id="st3"> </div>
-      <br />
-      <div class="stbox" id="st4"> </div>
-      <br />
-      <div class="stbox" id="st5"> </div>
-    </div>
-    </br>
-    </br>
-    </div>
-    <div class="ui">
-      <div class ="name" id="name">???</div>
-      <div class ="buttoncols">
-      <div class="guessstats" id="right">Right Guesses: 0</div>
-      <br />
-      <div class="guessstats" id="wrong">Wrong Guesses: 0</div>
-      </div>
-      <div class="guessbox" id="guessbox">
-      <form>
-        <input type="text" list ="pokeList" id ="guess" name ="guess">
-        <datalist id ="pokeList">
-        </datalist>
-      </form>
-      <br />
-      <button class="button" id="hint">Submit</button></div>
-      <div class ="buttoncols">
-      <div class="uibuttons">
-        <button class="button" id="hint">Hint</button>
+        <div class="hintBox" id="hint3"></div>
+      </section>
+      <figure>
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1025.png"
+          draggable="false"
+        />
+      </figure>
+      <section class="hints">
+        <div class="hintBox" id="hint4"></div>
         <br />
-        <button class="button" id="quitNext">Give Up</button>
-      </div>
-      </div>
-    </div>
-    <div class="footer">
+        <div class="hintBox" id="hint5"></div>
+        <br />
+        <div class="hintBox" id="hint6"></div>
+      </section>
+    </main>
+    <section class="ui">
+      <section class="name" id="name">???</section>
+      <section class="buttonCols">
+        <section class="statButtons">
+          <div class="guessStats" id="correct">Correct Guesses: 0</div>
+          <br />
+          <div class="guessStats" id="wrong">Wrong Guesses: 0</div>
+        </section>
+      </section>
+      <section class="guessBox" id="guessBox">
+        <form id="form">
+          <input type="text" list="pokeList" id="inputBox" name="inputBox" />
+          <datalist id="pokeList"> </datalist>
+          <br />
+          <br />
+          <button id="submit">Submit</button>
+        </form>
+      </section>
+      <section class="buttonCols">
+        <section class="uiButtons">
+          <button id="hint">Hint</button>
+          <br />
+          <button id="quitNext">Give Up</button>
+        </section>
+      </section>
+    </section>
+    <footer>
       This is a free interactive web project created for educational purposes.
       The Pokémon logo and all related names and characters are TM and copyright
       The Pokémon Company and its respective owners (Nintendo, Game Freak,
       CREATURES Inc.) © 1996-2024. All rights reserved. Poké Ball silhouette
-      created by Iconic of The Noun Project (CC-BY-3.0). Pokémon images and additional data queried from PokéAPI.
-    </div>
+      created by Iconic of The Noun Project (CC-BY-3.0). Pokémon images and
+      additional data queried from PokéAPI.
+    </footer>
   </body>
 </html>
