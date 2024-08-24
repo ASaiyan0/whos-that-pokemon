@@ -41,14 +41,14 @@ export class Game {
       audio.play();
     });
 
-    this.quitNextButton.addEventListener("click", () => {
+    this.quitNextButton.addEventListener("click", async() => {
       if (this.quitNextButton.textContent == "Give Up") {
         this.pokemonImage.style.filter = "brightness(100%)";
         this.revealName();
-        this.revealAllHints();
+        await this.revealAllHints();
         this.numWrong++;
         this.wrongGuesses.textContent = "Wrong Guesses: " + this.numWrong;
-        this.quitNextButton.textContent = "Next Pokémon";
+        setTimeOut(this.quitNextButton.textContent = "Next Pokémon", 1500);
       } else if (this.quitNextButton.textContent == "Next Pokémon") {
         this.newPokemon(this.randomNum());
         this.quitNextButton.textContent = "Give Up";
