@@ -139,10 +139,10 @@ export class Game {
     return Math.floor(Math.random() * 1025) + 1;
   }
 
-  revealAllHints() {
+ async revealAllHints() {
     for (let n = 0; n <= 5; n++) {
       this.hintCount = n;
-      this.getHint();
+      await this.getHint();
     }
     this.hintCount = 0;
   }
