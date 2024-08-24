@@ -48,7 +48,7 @@ export class Game {
         await this.revealAllHints();
         this.numWrong++;
         this.wrongGuesses.textContent = "Wrong Guesses: " + this.numWrong;
-        setTimeOut(() => {this.quitNextButton.textContent = "Next Pokémon", 1500});
+        setTimeOut(() => {this.quitNextButton.textContent = "Next Pokémon"}, 1500);
       } else if (this.quitNextButton.textContent == "Next Pokémon") {
         this.newPokemon(this.randomNum());
         this.quitNextButton.textContent = "Give Up";
