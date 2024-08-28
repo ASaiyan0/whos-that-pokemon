@@ -95,8 +95,8 @@ export class Pokemon {
         (networkError) => console.log(networkError.message)
       )
       .then(async (jsonResponse) => {
-        let height = jsonResponse.weight / 10;
-        return `Height: ${height}kg`;
+        let weight = jsonResponse.weight / 10;
+        return `Weight: ${weight}kg`;
       });
   }
 
